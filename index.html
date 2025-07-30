@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>কাজী মুমতাহিন ফাইয়াজ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #00264d;
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    #typewriter {
+      font-size: 20px;
+      margin-top: 10px;
+      font-style: italic;
+      color: #cce6ff;
+      height: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.6s ease;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #00264d;
+    }
+
+    ul {
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #00264d;
+      color: white;
+    }
+
+    a {
+      color: #003d80;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>কাজী মুমতাহিন ফাইয়াজ</h1>
+  <div id="typewriter"></div>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>🔍 পরিচিতি</h2>
+    <p>আমি কাজী মুমতাহিন ফাইয়াজ, একজন মাধ্যমিক পর্যায়ের শিক্ষার্থী। আমি একজন ভবিষ্যৎ স্বপ্নদ্রষ্টা, যার আগ্রহ প্রযুক্তি, সৃজনশীল চিন্তা ও জ্ঞান অন্বেষণের পথে।</p>
+  </div>
+
+  <div class="section">
+    <h2>💼 দক্ষতা (Skills)</h2>
+    <ul>
+      <li>কুরআনের হাফেজ</li>
+      <li>Little learner</li>
+      <li>HTML, CSS – প্রাথমিক ওয়েব ডিজাইন</li>
+      <li>Python প্রোগ্রামিং – বেসিক লেভেল</li>
+      <li>Problem Solving & Creative Thinking</li>
+      <li>প্রযুক্তি ও উদ্ভাবনের প্রতি গভীর আগ্রহ</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🎯 ভবিষ্যৎ লক্ষ্য</h2>
+    <p>আমি চাই একজন সৃজনশীল ওয়েব ডেভেলপার ও উদ্ভাবক হিসেবে নিজেকে গড়ে তুলতে। আমার স্বপ্ন, বাংলাদেশে প্রযুক্তিগত পরিবর্তন আনয়নে ভূমিকা রাখা।</p>
+  </div>
+
+  <div class="section">
+    <h2>📬 যোগাযোগ</h2>
+    <p>
+      ইমেইল: <a href="mailto:faiyaz@example.com">faiyaz@example.com</a><br>
+      ফেসবুক: <a href="https://facebook.com">facebook.com/yourprofile</a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  &copy; ২০২৫ | কাজী মুমতাহিন ফাইয়াজ | সকল অধিকার সংরক্ষিত
+</footer>
+
+<!-- টাইপিং অ্যানিমেশন -->
+<script>
+  const texts = [
+    "স্বপ্ন দেখি কল্পনায়, তৈরি করি বাস্তবতায়।",
+    "শিক্ষার্থী, স্বপ্নদ্রষ্টা, প্রযুক্তিপ্রেমী।",
+    "ভবিষ্যতের জন্য নিজেকে প্রস্তুত করি।"
+  ];
+  let count = 0;
+  let index = 0;
+  let currentText = '';
+  let letter = '';
+
+  function type() {
+    if (count === texts.length) count = 0;
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typewriter').textContent = letter;
+
+    if (letter.length === currentText.length) {
+      count++;
+      index = 0;
+      setTimeout(type, 2000);
+    } else {
+      setTimeout(type, 80);
+    }
+  }
+  type();
+</script>
+
+<!-- স্ক্রল করলে সেকশন শো -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.9;
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < trigger) {
+        sec.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
